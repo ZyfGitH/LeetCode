@@ -29,4 +29,11 @@ public class TestSolution37 {
         boolean palindrome = solution9.isPalindrome(121);
         System.out.println(palindrome);
     }
+
+    @Test
+    public void test4(){
+        String s = "zhang";
+        System.out.println(s.length());
+        System.out.println(s.toCharArray().length);
+    }
 }
