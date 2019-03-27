@@ -2,6 +2,8 @@ package cn.itcast.leetcode;
 
 import org.junit.Test;
 
+import java.util.Stack;
+
 /**
  * Created by Yafei Zhang
  * on 2018-11-28 16:01
@@ -36,4 +38,15 @@ public class TestSolution37 {
         System.out.println(s.length());
         System.out.println(s.toCharArray().length);
     }
+
+    @Test
+    public void test5(){
+        System.out.println(5&0x1);
+    }
+
+//    @Test
+//    public void test6(){
+//        Stack<> ints = new Stack<integer>();
+//        ints.push(2);
+//    }
 }

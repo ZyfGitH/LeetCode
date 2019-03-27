@@ -1,10 +1,4 @@
 package cn.itcast.leetcode;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Queue;
-
 /**
  * Created by Yafei Zhang
  * on 2018-12-11 22:00
