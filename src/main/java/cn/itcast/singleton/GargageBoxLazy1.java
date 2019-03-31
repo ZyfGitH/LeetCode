@@ -12,7 +12,7 @@ package cn.itcast.singleton;
  * 优化：使用饿汉式
  */
 public class GargageBoxLazy1 {
-    private static GargageBoxLazy1 instance;
+    private volatile static GargageBoxLazy1 instance;
     public static GargageBoxLazy1 getInstance(){
         if (instance == null){
             synchronized (GargageBoxLazy1.class){

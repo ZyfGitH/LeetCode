@@ -10,5 +10,9 @@ public class Test {
         GargageBoxLazy2 instance1 = GargageBoxLazy2.getInstance();
 //        GargageBoxLazy1 gargageBoxLazy1 = new GargageBoxLazy1();
 //        System.out.println(gargageBoxLazy1);
+        int x = 19;
+        String s = x + "";
+        System.out.println(s);
+        StringBuffer sb = new StringBuffer();
     }
 }

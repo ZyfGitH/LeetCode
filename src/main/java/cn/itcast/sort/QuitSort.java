@@ -19,6 +19,7 @@ public class QuitSort {
             quitSort(nums,p+1,end);
         return nums;
     }
+    
     public static int partition(int[] nums, int start, int end){
         int first = nums[start];
         int i = start,j = end;

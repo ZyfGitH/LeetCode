@@ -25,7 +25,6 @@ public class HeapSort {
                 nums[k] = nums[i];
                 k = i;
             }
-
         }
         nums[k] = temp;
     }
