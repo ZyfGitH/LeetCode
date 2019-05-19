@@ -7,79 +7,39 @@ import java.util.*;
  * on 2018-11-27 21:46
  */
 public class Test {
-    public int lengthOfLongestSubstring(String s) {
-        int len = s.length();
-        if(len == 0)
-            return 0;
-        if(len == 1)
-            return 1;
-        int start = 0,end = 0;
-        int res = 0;
-        HashSet<Character> set = new HashSet<Character>();
-        while(start < len && end < len){
-            if(set.contains(s.charAt(end))){
-                set.remove(s.charAt(start++));
-            }else{
-                set.add(s.charAt(end++));
-                res = (end - start) > res?(end - start):res;
-            }
+    public int searchInsert(int[] nums, int target) {
+        if(nums.length == 0)
+            return -1;
+        int start = 0, end = nums.length - 1;
+        int mid;
+        while(start <= end){
+            mid = start + (end - start) /2;
+            if(nums[mid] >= target){
+                end = mid - 1;
+            }else
+                start = mid + 1;
         }
-        return res;
+        return start;
+        // if(start < nums.length && nums[start] == target)
+        //     return start;
+        // else{
+        //     return start - 1;
+        // }
     }
 
-    public int reverse(int x) {
-        if(x < 10 || x > -10)
-            return x;
-        int num = x > 0?x:-1*x;
-        int res = 0;
-        Queue<Integer> q = new LinkedList<Integer>();
-        while(num/10 != 0){
-            q.add(num%10);
-            num = num /10;
+    public void printNumber(int[] numbers){
+        for (int i = 0; i < numbers.length; i++){
+            System.out.println(numbers[i]);
         }
-        q.add(num);
-        while(!q.isEmpty()){
-            res = 10 * res + q.poll();
-        }
-        return x>0?res:-1*res;
     }
-    public int myAtoi(String str) {
-        if(str.length() == 0)
-            return 0;
-        int index = 0,sign = 1;
-        long sum = 0;
-        int len = str.length();
-        while((str.charAt(index) == ' ') && (index < len)){
-            index++;
-            if (index == len)
-                return 0;
-        }
-        if(str.charAt(index) == '+' || str.charAt(index) == '-'){
-            sign = str.charAt(index) == '+'?1:-1;
-            index++;
-        }
-        while(index < str.length()){
-            int dig = str.charAt(index) - '0';
-            if(dig < 0 || dig > 9)
-                break;
-            sum = sum*10 + dig;
-            if (sign*sum > Integer.MAX_VALUE){
-                return Integer.MAX_VALUE;
-            }
-            if (sign*sum < Integer.MIN_VALUE)
-                return Integer.MIN_VALUE;
-            index++;
-        }
-        return (int)(sign*sum);
 
-    }
     public static void main(String[] args) {
         Test test = new Test();
-        String s = "9223372036854775808";
-        System.out.println(test.myAtoi(s));
+        int[][] nums = new int[][]{{1,3,5,6},{1,3,5,6}};
+        test.printNumber(nums[2]);
+//        int search = test.searchInsert(nums, 2);
+//        System.out.println(search);
 
     }
-
-
 
 }

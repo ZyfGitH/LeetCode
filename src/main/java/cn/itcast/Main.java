@@ -21,6 +21,7 @@ public class Main {
             ArrayList arrayList = new ArrayList();
             HashSet<Integer> integers = new HashSet<Integer>();
             HashMap<Integer,Integer> map = new HashMap<Integer, Integer>();
+            Stack<Integer> stack = new Stack<Integer>();
         }
     }
 
