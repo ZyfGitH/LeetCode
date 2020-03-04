@@ -5,7 +5,7 @@ package cn.itcast.sort;
  * on 2019-03-27 16:18
  */
 public class QuitSort {
-    public int[] sort(int[] nums){
+    public static int[] sort(int[] nums){
         int len = nums.length;
         return quitSort(nums,0,len-1);
     }
@@ -29,25 +29,26 @@ public class QuitSort {
             }
             while (nums[i] <= first && i <= end)
                 i++;
-            if (i < j){
-                int temp = nums[j];
-                nums[j] = nums[i];
-                nums[i] = temp;
-            }
+            if (i < j)
+                swap(nums,i,j);
         }
-        if (j != start){
-            nums[start] = nums[start] ^ nums[j];
-            nums[j] = nums[start] ^ nums[j];
-            nums[start] = nums[start] ^ nums[j];
-        }
+        if (j != start)
+            swap(nums,j,start);
         return j;
     }
 
+    private static void swap(int[] nums, int i, int j){
+        int temp = nums[j];
+        nums[j] = nums[i];
+        nums[i] = temp;
+    }
+
+
     public static void main(String[] args) {
-        QuitSort quitSort = new QuitSort();
         int[] nums = {87,45,78,32,17,65,53,9,122,133};
-        for (int i:quitSort.sort(nums)){
-            System.out.println(i);
+        int[] sort = sort(nums);
+        for (int i:sort){
+            System.out.print(i + " ");
         }
     }
 
